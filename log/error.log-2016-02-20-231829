@@ -1,0 +1,4 @@
+  File "magnet_crawler.py", line 110
+    with open('magnet_output', w+) as output_file:
+                                 ^
+SyntaxError: invalid syntax

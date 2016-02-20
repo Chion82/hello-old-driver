@@ -107,7 +107,7 @@ def main():
 	root_url = raw_input()
 	if not '://' in root_url:
 		root_url = 'http://' + root_url
-	with open('magnet_output', w+) as output_file:
+	with open('magnet_output', 'w+') as output_file:
 		output_file.write('')
 	scan_page(root_url)
 
