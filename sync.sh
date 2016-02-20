@@ -23,7 +23,7 @@ if [ $(cat lasterror.log | wc -l) -gt 0 ];then
 fi
 
 if [ $website_test_passed -eq 1 ]; then
-	echo ${website_url}\n | python magnet_crawler.py > lastsync.log 2> lasterror.log
+	echo "${website_url}\n" | python magnet_crawler.py > lastsync.log 2> lasterror.log
 	if [ $(cat lasterror.log | wc -l) -gt 0 ]; then
 		sync_success=0
 	else
@@ -48,7 +48,8 @@ echo '最后同步成功时间:  '$(cat last_sync_success.txt)'  ' >> README.md
 echo '已抓取磁力链: '$(cat magnet_output | grep "magnet:?" | wc -l)'  ' >> README.md
 echo '本repo已存活: '$(expr $(expr $(date +"%s") - $first_run_time) / 60 / 60 / 24)'天  ' >> README.md
 
-echo '\n#Log  ' >> README.md
+echo '\nLog' >> README.md
+echo '----' >> README.md
 cat synclog.txt >> README.md
 
 git add .
