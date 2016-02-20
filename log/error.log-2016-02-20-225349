@@ -49,20 +49,20 @@ Traceback (most recent call last):
     return self.request('GET', url, **kwargs)
   File "/Library/Python/2.7/site-packages/requests/sessions.py", line 468, in request
     resp = self.send(prep, **send_kwargs)
-  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 576, in send
-    r = adapter.send(request, **kwargs)
-  File "/Library/Python/2.7/site-packages/requests/adapters.py", line 376, in send
-    timeout=timeout
-  File "/Library/Python/2.7/site-packages/requests/packages/urllib3/connectionpool.py", line 559, in urlopen
-    body=body, headers=headers)
-  File "/Library/Python/2.7/site-packages/requests/packages/urllib3/connectionpool.py", line 376, in _make_request
-    httplib_response = conn.getresponse(buffering=True)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 1132, in getresponse
-    response.begin()
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 453, in begin
-    version, status, reason = self._read_status()
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 409, in _read_status
-    line = self.fp.readline(_MAXLINE + 1)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 480, in readline
-    data = self._sock.recv(self._rbufsize)
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 608, in send
+    r.content
+  File "/Library/Python/2.7/site-packages/requests/models.py", line 737, in content
+    self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+  File "/Library/Python/2.7/site-packages/requests/models.py", line 660, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "/Library/Python/2.7/site-packages/requests/packages/urllib3/response.py", line 340, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Library/Python/2.7/site-packages/requests/packages/urllib3/response.py", line 489, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "/Library/Python/2.7/site-packages/requests/packages/urllib3/response.py", line 458, in _handle_chunk
+    returned_chunk = self._fp._safe_read(self.chunk_left)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 703, in _safe_read
+    chunk = self.fp.read(min(amt, MAXAMOUNT))
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 384, in read
+    data = self._sock.recv(left)
 KeyboardInterrupt

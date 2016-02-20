@@ -43,7 +43,7 @@ else
 fi
 
 cp readme_header.md README.md
-echo '琉璃神社今天挂了吗？ '$gua_le_ma'  ' >> README.md
+echo '今天琉璃神社挂了吗？ '$gua_le_ma'  ' >> README.md
 echo '最后同步成功时间:  '$(cat last_sync_success.txt)'  ' >> README.md
 echo '已抓取磁力链: '$(cat magnet_output | grep "magnet:?" | wc -l)'  ' >> README.md
 echo '本repo已存活: '$(expr $(expr $(date +"%s") - $first_run_time) / 60 / 60 / 24)'天  ' >> README.md
@@ -54,4 +54,4 @@ cat synclog.txt >> README.md
 
 git add .
 git commit -m "Sync on $(date)"
-git push origin master
+git push origin master -f
