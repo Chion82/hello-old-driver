@@ -1,7 +1,7 @@
 import requests, re, json, sys
 
 cookie = ''
-max_depth = 40
+max_depth = 30
 viewed_urls = []
 found_magnets = []
 ignore_url_param = True
@@ -21,9 +21,10 @@ def scan_page(url, depth=0):
 	print('Entering: ' + url)
 	sys.stdout.flush()
 
-	viewed_urls.append(url)
 	try:
 		result = session.get(url, timeout=60)
+		result.raise_for_status()
+		viewed_urls.append(url)
 	except Exception:
 		scan_page(url, depth)
 		return
