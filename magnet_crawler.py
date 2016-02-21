@@ -30,6 +30,10 @@ def scan_page(url, depth=0):
 	sub_urls = get_sub_urls(result_text, url)
 	page_title = get_page_title(result_text)
 	new_resource = {'title':page_title, 'magnets': []}
+	if new_resource in resource_list:
+		for sub_url in sub_urls:
+			scan_page(sub_url, depth+1)
+		return
 	if (len(magnet_list) > 0):
 		append_title_to_file(page_title, 'magnet_output')
 	for magnet in magnet_list:
