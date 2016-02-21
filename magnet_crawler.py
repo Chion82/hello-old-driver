@@ -29,18 +29,16 @@ def scan_page(url, depth=0):
 	magnet_list = get_magnet_links(result_text)
 	sub_urls = get_sub_urls(result_text, url)
 	page_title = get_page_title(result_text)
-	new_resource = {'title':page_title, 'magnets': []}
+	new_resource = {'title':page_title, 'magnets': magnet_list}
 	if new_resource in resource_list:
 		for sub_url in sub_urls:
 			scan_page(sub_url, depth+1)
 		return
 	if (len(magnet_list) > 0):
 		append_title_to_file(page_title, 'magnet_output')
-	for magnet in magnet_list:
-		print('Found magnet: ' + magnet)
-		new_resource['magnets'].append(magnet)
-		append_magnet_to_file(magnet, 'magnet_output')
-	if (len(magnet_list) > 0):
+		for magnet in magnet_list:
+			print('Found magnet: ' + magnet)
+			append_magnet_to_file(magnet, 'magnet_output')
 		resource_list.append(new_resource)
 	save_json_to_file('resource_list.json')
 	for sub_url in sub_urls:
