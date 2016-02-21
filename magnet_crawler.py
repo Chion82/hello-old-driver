@@ -1,4 +1,4 @@
-import requests, re, json
+import requests, re, json, sys
 
 cookie = ''
 max_depth = 40
@@ -19,9 +19,11 @@ def scan_page(url, depth=0):
 		return
 
 	print('Entering: ' + url)
+	sys.stdout.flush()
+
 	viewed_urls.append(url)
 	try:
-		result = session.get(url)
+		result = session.get(url, timeout=60)
 	except Exception:
 		scan_page(url, depth)
 		return
@@ -30,17 +32,21 @@ def scan_page(url, depth=0):
 	sub_urls = get_sub_urls(result_text, url)
 	page_title = get_page_title(result_text)
 	new_resource = {'title':page_title, 'magnets': magnet_list}
+
 	if new_resource in resource_list:
 		for sub_url in sub_urls:
 			scan_page(sub_url, depth+1)
 		return
+
 	if (len(magnet_list) > 0):
 		append_title_to_file(page_title, 'magnet_output')
 		for magnet in magnet_list:
 			print('Found magnet: ' + magnet)
+			sys.stdout.flush()
 			append_magnet_to_file(magnet, 'magnet_output')
 		resource_list.append(new_resource)
-	save_json_to_file('resource_list.json')
+		save_json_to_file('resource_list.json')
+
 	for sub_url in sub_urls:
 		scan_page(sub_url, depth+1)
 
