@@ -88,7 +88,7 @@ def get_magnet_links(result_text):
 	if (ignore_html_label):
 		result_text = re.sub(r'<.*?>', '', result_text)
 	hashes = set(re.findall(r'[^0-9a-fA-F]([0-9a-fA-F]{40})[^0-9a-fA-F]', result_text))
-	magnets = list(set([('magnet:?xt=urn:btih:' + hash_value).lower() for hash_value in hashes]))
+	magnets = list(set([('magnet:?xt=urn:btih:' + hash_value).lower() for hash_value in hashes if not ('magnet:?xt=urn:btih:' + hash_value).lower() in found_magnets]))
 	found_magnets.extend(magnets)
 	return magnets
 
