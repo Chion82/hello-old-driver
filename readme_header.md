@@ -6,7 +6,7 @@ Hello Old Driver
 ----------------
 这个repo定时同步[琉璃神社](http://www.hacg.lol)的磁力链资源，供各位绅士享用。  
 资源列表在[resource_list.json](https://github.com/Chion82/hello-old-driver/blob/master/resource_list.json)，请善用Ctrl+F查找。  
-感谢琉璃神社！
+琉璃神社に感謝します！
 
 Status
 ------
