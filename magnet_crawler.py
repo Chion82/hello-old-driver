@@ -23,7 +23,8 @@ def scan_page(url, depth=0):
 
 	try:
 		result = session.get(url, timeout=60)
-		result.raise_for_status()
+		if not (result.status_code >= 400 and result.status_code<500):
+			result.raise_for_status()
 		viewed_urls.append(url)
 	except Exception:
 		scan_page(url, depth)
