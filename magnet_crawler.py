@@ -1,7 +1,7 @@
 import requests, re, json, sys
 
 cookie = ''
-max_depth = 30
+max_depth = 40
 viewed_urls = []
 found_magnets = []
 ignore_url_param = True
@@ -72,7 +72,7 @@ def get_sub_urls(result_text, url):
 		sub_url = re.sub(r'//$', '/', sub_url)
 		if ignore_url_param:
 			sub_url = re.sub(r'\?.*$', '', sub_url)
-		if (len(re.findall(r'/', sub_url)) >= len(re.findall(r'/', url))) and not sub_url in viewed_urls:
+		if not sub_url in viewed_urls:
 			sub_urls.append(sub_url)
 	return sub_urls
 
