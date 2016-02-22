@@ -4,7 +4,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 cookie = ''
-max_depth = 40
+max_depth = 60
 viewed_urls = []
 found_magnets = []
 ignore_url_param = True
