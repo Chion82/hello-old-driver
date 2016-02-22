@@ -1,5 +1,8 @@
 import requests, re, json, sys, os
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 cookie = ''
 max_depth = 40
 viewed_urls = []
