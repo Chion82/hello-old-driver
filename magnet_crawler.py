@@ -116,6 +116,19 @@ def append_title_to_file(title, filename):
 		output_file.write(title + '\n')
 
 def save_json_to_file(filename):
+	global resource_list
+	new_resource_list = []
+	for resource in resource_list:
+		add_flag = True
+		for added_resource in new_resource_list:
+			if added_resource['title'] == resource['title']:
+				add_flag = False
+				added_resource['magnets'].extend(resource['magnets'])
+				added_resource['magnets'] = list(set(added_resource['magnets']))
+				break
+		if add_flag:
+			new_resource_list.append(resource)
+	resource_list = new_resource_list
 	with open(filename, 'w+') as output_file:
 		output_file.write(json.dumps(resource_list, indent=4, sort_keys=True, ensure_ascii=False))
 
