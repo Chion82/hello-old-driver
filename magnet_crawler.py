@@ -18,6 +18,8 @@ resource_list = []
 if os.path.exists('resource_list.json'):
 	with open('resource_list.json', 'r') as json_file:
 		resource_list = json.loads(json_file.read())
+	for resource in resource_list:
+		found_magnets.extend(resource['magnets'])
 
 def scan_page(url, depth=0):
 	if url in viewed_urls:
