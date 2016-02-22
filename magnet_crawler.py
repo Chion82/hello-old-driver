@@ -56,6 +56,7 @@ def scan_page(url, depth=0):
 			sys.stdout.flush()
 			append_magnet_to_file(magnet, 'magnet_output')
 		resource_list.append(new_resource)
+		remove_duplicated_resources()
 		save_json_to_file('resource_list.json')
 
 	for sub_url in sub_urls:
@@ -117,7 +118,7 @@ def append_title_to_file(title, filename):
 	with open(filename, 'a+') as output_file:
 		output_file.write(title + '\n')
 
-def save_json_to_file(filename):
+def remove_duplicated_resources():
 	global resource_list
 	new_resource_list = []
 	for resource in resource_list:
@@ -131,6 +132,8 @@ def save_json_to_file(filename):
 		if add_flag:
 			new_resource_list.append(resource)
 	resource_list = new_resource_list
+
+def save_json_to_file(filename):
 	with open(filename, 'w+') as output_file:
 		output_file.write(json.dumps(resource_list, indent=4, sort_keys=True, ensure_ascii=False))
 
