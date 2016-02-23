@@ -1,6 +1,6 @@
 #!/bin/sh
 
-website_url='http://www.hacg.lol'
+website_url='http://www.hacg.li'
 first_run_time=1455976198
 
 test_result=$(curl $website_url -I | grep '200 OK' | wc -l)
