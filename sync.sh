@@ -3,14 +3,18 @@
 website_url='http://www.hacg.li'
 first_run_time=1455976198
 
-test_result=$(curl $website_url -I | grep '200 OK' | wc -l)
-if [ $test_result -eq 1 ]; then
-	website_test_passed=1
-	gua_le_ma='没有'
-else
-	website_test_passed=0
-	gua_le_ma='卧槽...挂了'
-fi
+for i in {1..10}
+do
+	test_result=$(curl $website_url -I | grep '200 OK' | wc -l)
+	if [ $test_result -eq 1 ]; then
+		website_test_passed=1
+		gua_le_ma='没有'
+		break
+	else
+		website_test_passed=0
+		gua_le_ma='卧槽...挂了'
+	fi
+done
 
 test -d 'archives' || mkdir 'archives'
 cp magnet_output ./archives/magnet_output-$(date +"%F-%H%M%S")
