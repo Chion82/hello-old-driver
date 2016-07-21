@@ -27,7 +27,7 @@ if [ $(cat lasterror.log | wc -l) -gt 0 ];then
 fi
 
 if [ $website_test_passed -eq 1 ]; then
-	echo -e "${website_url}\n" | python magnet_crawler.py > lastsync.log 2> lasterror.log
+	echo -e "${website_url}\n" | proxychains4 -q python magnet_crawler.py > lastsync.log 2> lasterror.log
 	if [ $(cat lasterror.log | wc -l) -gt 0 ]; then
 		sync_success=0
 	else
