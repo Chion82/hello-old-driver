@@ -5,7 +5,7 @@ first_run_time=1455976198
 
 for i in {1..10}
 do
-	test_result=$(curl $website_url -I | grep '200 OK' | wc -l)
+	test_result=$(proxychains4 -q curl $website_url -I | grep '200 OK' | wc -l)
 	if [ $test_result -eq 1 ]; then
 		website_test_passed=1
 		gua_le_ma='没有'
