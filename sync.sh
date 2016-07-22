@@ -5,7 +5,7 @@ first_run_time=1455976198
 
 for i in {1..10}
 do
-	test_result=$(proxychains4 -q curl $website_url -I | grep '200 OK' | wc -l)
+	test_result=$(/usr/local/bin/proxychains4 -q curl $website_url -I | grep '200 OK' | wc -l)
 	if [ $test_result -eq 1 ]; then
 		website_test_passed=1
 		gua_le_ma='没有'
@@ -27,7 +27,7 @@ if [ $(cat lasterror.log | wc -l) -gt 0 ];then
 fi
 
 if [ $website_test_passed -eq 1 ]; then
-	echo -e "${website_url}\n" | proxychains4 -q python magnet_crawler.py > lastsync.log 2> lasterror.log
+	echo -e "${website_url}\n" | /usr/local/bin/proxychains4 -q python magnet_crawler.py > lastsync.log 2> lasterror.log
 	if [ $(cat lasterror.log | wc -l) -gt 0 ]; then
 		sync_success=0
 	else
