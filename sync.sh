@@ -1,6 +1,6 @@
 #!/bin/sh
 
-website_url='http://www.hacg.li'
+website_url='http://www.hacg.fi'
 first_run_time=1455976198
 
 for i in {1..10}
