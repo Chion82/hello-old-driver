@@ -11059,10 +11059,9 @@
     }, 
     {
         "magnets": [
-            "magnet:?xt=urn:btih:e1a164d7634d3b0c17c8a8c10789f66a14554731", 
-            "magnet:?xt=urn:btih:e0474ba3056d3752fcb064182698a582732da3d1", 
+            "magnet:?xt=urn:btih:2031514910b071e7a5723e3dacaaab85944ab95a", 
             "magnet:?xt=urn:btih:6a10ade150589a223f7856e21e39e09e6a07a565", 
-            "magnet:?xt=urn:btih:2031514910b071e7a5723e3dacaaab85944ab95a"
+            "magnet:?xt=urn:btih:e1a164d7634d3b0c17c8a8c10789f66a14554731"
         ], 
         "title": "旧地狱 | 琉璃神社 ★ HACG"
     }, 
@@ -12490,7 +12489,6 @@
         "magnets": [
             "magnet:?xt=urn:btih:4d18e4133550fc25f5c7d8417a6b3fa0da8421a6", 
             "magnet:?xt=urn:btih:61d359f034d96255c970c7b1c1e1a97994b09795", 
-            "magnet:?xt=urn:btih:ec8c855c1eb66eb5615713b4aa34bc41f06180e6", 
             "magnet:?xt=urn:btih:e08193763100a7e559049b80d87cba7fec4b24c2", 
             "magnet:?xt=urn:btih:7e27828860693a07a45bf9a7730e1e2acb40fb66", 
             "magnet:?xt=urn:btih:0f9946f180758c20000548c96b2201bccc976b5a", 
@@ -12509,11 +12507,5 @@
             "magnet:?xt=urn:btih:659fb7326cc54619b8fbc26b30c4ed1e3b2a6b58"
         ], 
         "title": "2017年2月 各组作品合集 | 琉璃神社 ★ HACG"
-    }, 
-    {
-        "magnets": [
-            "magnet:?xt=urn:btih:ac9a95dffedda64e6cd0395cc14b8b2891f3b468"
-        ], 
-        "title": "琉璃神社壁纸包 2017年2月号 | 琉璃神社 ★ HACG"
     }
 ]
