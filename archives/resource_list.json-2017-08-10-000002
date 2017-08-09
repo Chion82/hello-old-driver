@@ -14051,7 +14051,6 @@
     }, 
     {
         "magnets": [
-            "magnet:?xt=urn:btih:whgzmyaqw74757ixpgqophgtiq3n5e4k", 
             "magnet:?xt=urn:btih:e44ff0a783d90d4c0c36f9da1c824ec2725506e3", 
             "magnet:?xt=urn:btih:u3gfgwghorusyjwspm2kv6s26e246kem"
         ], 
@@ -14160,11 +14159,5 @@
             "magnet:?xt=urn:btih:wkgjrljdp3grmipbacjsxdke6cosrlay"
         ], 
         "title": "Neptune | 琉璃神社 ★ HACG"
-    }, 
-    {
-        "magnets": [
-            "magnet:?xt=urn:btih:d1d70ec747541b07d76adc16dacyclet"
-        ], 
-        "title": "颜艺 | 琉璃神社 ★ HACG"
     }
 ]
