@@ -81,8 +81,6 @@ Traceback (most recent call last):
     scan_page(sub_url, depth+1)
   File "magnet_crawler.py", line 63, in scan_page
     scan_page(sub_url, depth+1)
-  File "magnet_crawler.py", line 63, in scan_page
-    scan_page(sub_url, depth+1)
   File "magnet_crawler.py", line 43, in scan_page
     sub_urls = get_sub_urls(result_text, url)
   File "magnet_crawler.py", line 75, in get_sub_urls
