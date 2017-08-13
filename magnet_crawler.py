@@ -72,7 +72,10 @@ def get_sub_urls(result_text, url):
 		if 'javascript:' in sub_url or 'mailto:' in sub_url:
 			continue
 		if sub_url[0:4] == 'http':
-			if (get_url_prefix(sub_url)[1] != get_url_prefix(url)[1]):
+			try:
+				if (get_url_prefix(sub_url)[1] != get_url_prefix(url)[1]):
+					continue
+			except Exception:
 				continue
 		elif sub_url[0:1] == '/':
 			sub_url = get_url_prefix(url)[0] + '://' + get_url_prefix(url)[1] + sub_url
