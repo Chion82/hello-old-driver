@@ -1,4 +1,4 @@
-Exception RuntimeError: 'maximum recursion depth exceeded' in <generator object <genexpr> at 0x7f4aadf16b40> ignored
+Exception RuntimeError: 'maximum recursion depth exceeded' in <generator object <genexpr> at 0x7f988561f550> ignored
 Traceback (most recent call last):
   File "magnet_crawler.py", line 158, in <module>
     main()
