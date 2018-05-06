@@ -17440,11 +17440,9 @@
     }, 
     {
         "magnets": [
-            "magnet:?xt=urn:btih:4a393d6b1022c9955fea908cc8c345e67caa7768", 
-            "magnet:?xt=urn:btih:471d9e6bafbce23a4099ebeb63183e07595f7e84", 
-            "magnet:?xt=urn:btih:70fec7508c5d446617dbabc1b82e0fa5e526eb3d", 
-            "magnet:?xt=urn:btih:a98e39d834aa859673f9cf24119762f343b5ed78", 
             "magnet:?xt=urn:btih:dc0adc70d605d4defc6eec1e86048f9f3dd9678c", 
+            "magnet:?xt=urn:btih:a98e39d834aa859673f9cf24119762f343b5ed78", 
+            "magnet:?xt=urn:btih:4a393d6b1022c9955fea908cc8c345e67caa7768", 
             "magnet:?xt=urn:btih:4e80e7db35df01975f7fc681613499c3101d96dd", 
             "magnet:?xt=urn:btih:c868393a7860d4c79cceb76bb554964ffc0db96b", 
             "magnet:?xt=urn:btih:e6976d0d1ace4836f7e176c24849a7bb6a670b50"
