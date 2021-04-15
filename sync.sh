@@ -1,6 +1,6 @@
 #!/bin/sh
 
-website_url='http://www.liuli.pw'
+website_url='https://www.llss.at/'
 first_run_time=1455976198
 
 for i in {1..10}

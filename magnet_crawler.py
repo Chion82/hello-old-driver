@@ -1,7 +1,7 @@
 import requests, re, json, sys, os
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
 cookie = ''
 max_depth = 40
@@ -16,7 +16,7 @@ session.headers.update({'Cookie': cookie})
 resource_list = []
 
 if os.path.exists('resource_list.json'):
-	with open('resource_list.json', 'r') as json_file:
+	with open('resource_list.json', 'rb') as json_file:
 		resource_list = json.loads(json_file.read())
 	for resource in resource_list:
 		found_magnets.extend(resource['magnets'])
@@ -38,7 +38,7 @@ def scan_page(url, depth=0):
 	except Exception:
 		scan_page(url, depth)
 		return
-	result_text = result.content
+	result_text = result.content.decode('utf8')
 	magnet_list = get_magnet_links(result_text)
 	sub_urls = get_sub_urls(result_text, url)
 	page_title = get_page_title(result_text)
@@ -119,12 +119,12 @@ def get_page_title(result_text):
 		return ''
 
 def append_magnet_to_file(magnet, filename):
-	with open(filename, 'a+') as output_file:
-		output_file.write(magnet + '\n')
+	with open(filename, 'ba+') as output_file:
+		output_file.write(magnet.encode('utf8') + '\n'.encode('utf8'))
 
 def append_title_to_file(title, filename):
-	with open(filename, 'a+') as output_file:
-		output_file.write(title + '\n')
+	with open(filename, 'ba+') as output_file:
+		output_file.write(title.encode('utf8') + '\n'.encode('utf8'))
 
 def remove_duplicated_resources():
 	global resource_list
@@ -142,12 +142,12 @@ def remove_duplicated_resources():
 	resource_list = new_resource_list
 
 def save_json_to_file(filename):
-	with open(filename, 'w+') as output_file:
-		output_file.write(json.dumps(resource_list, indent=4, sort_keys=True, ensure_ascii=False))
+	with open(filename, 'bw+') as output_file:
+		output_file.write(json.dumps(resource_list, indent=4, sort_keys=True, ensure_ascii=False).encode('utf8'))
 
 def main():
 	print('Enter a website url to start.')
-	root_url = raw_input()
+	root_url = input()
 	if not '://' in root_url:
 		root_url = 'http://' + root_url
 	#with open('magnet_output', 'w+') as output_file:
